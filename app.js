@@ -30,10 +30,7 @@ getList()
 
 })
 .catch((err) => {
-  console.error(err);
-  let newError = document.createElement("p");
-  newError.textContent = err.message;
-  error.append(newError);
+  error.textContent = err.message;
 })
 // TODO: If the promise resolves with the list of hobbits
 // Render the list of hobbits as list items within the unordered list with id="list" (check the index.html file)
