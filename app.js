@@ -8,7 +8,7 @@ let theList = document.getElementById("list");
 function getList() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      let potentialFail = Math.round(Math.random() * 100) < 10;
+      let potentialFail = Math.round(Math.random() * 100) < 50;
       if (potentialFail) {
         reject({ success: false, message: "Failed to get list of hobbits." });
       } else {
@@ -32,7 +32,7 @@ getList()
 .catch((err) => {
   console.error(err);
   let newError = document.createElement("p");
-  newError.textContent = err;
+  newError.textContent = err.message;
   error.append(newError);
 })
 // TODO: If the promise resolves with the list of hobbits
